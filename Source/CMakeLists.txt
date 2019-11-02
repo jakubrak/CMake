@@ -1153,6 +1153,11 @@ add_executable(cpack CPack/cpack.cxx ${MANIFEST_FILE})
 list(APPEND _tools cpack)
 target_link_libraries(cpack CPackLib)
 
+# build CMakeFormat executable
+add_executable(cmake-format Formatter/main.cpp)
+list(APPEND _tools cmake-format)
+target_link_libraries(cmake-format CMakeLib)
+
 # Curses GUI
 if(BUILD_CursesDialog)
   add_subdirectory(CursesDialog)
